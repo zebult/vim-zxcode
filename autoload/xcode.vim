@@ -18,8 +18,8 @@ function! xcode#Open_xcode(...) abort
     let a:count = get(a:, 1)
     " file open
     if filereadable(a:count)
-        call system('open -a Xcode '.expand('%:p'))
-        echo "xcode file open."
+        call system('open -a Xcode > '.expand('%:p'))
+        echo "xcode file open. ".expand('%:p')
         return
     endif
     " nest limit
@@ -46,7 +46,7 @@ function! xcode#Open_xcode(...) abort
     if s:files == ""
         echo "Not xcode project."
     else
-        echo "xcode project open."
+        echo "xcode project open. > ".expand(s:files)
         call system('open -a Xcode '.expand(s:files))
     endif
 endfunction
