@@ -1,8 +1,10 @@
-# xcode.vim
+# vim-zxcode.vim
 
 We'll given the power of vim into xcode.
 
-You can open the xcode from vim.
+![zxcode](https://raw.github.com/wiki/zebult/vim-zxcode/image/zxcode.png)
+
+You can xcode function from vim.
 
 ## installation
 ```vim
@@ -14,8 +16,8 @@ NeoBundle 'zebult/xcode.vim'
 
 ## mappings
 ```vim
-nnoremap <silent> <Leader>X :XcodeProjectOpen<CR>
-nnoremap <silent> <Leader>x :XcodeFileOpen<CR>
-nnoremap <silent> <Leader>e :XcodeFocus<CR>
-nnoremap <silent> <Leader>Q :XcodeClose<CR>
+nnoremap <silent> <Leader>X :ZXcodeProjectOpen<CR>
+nnoremap <silent> <Leader>x :ZXcodeFileOpen<CR>
+nnoremap <silent> <Leader>e :ZXcodeFocus<CR>
+nnoremap <silent> <Leader>Q :ZXcodeClose<CR>
 ```

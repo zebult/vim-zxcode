@@ -1,20 +1,20 @@
 "=============================================================================
-" File: xcode.vim
+" File: vim-zxcode.vim
 " Author: zebult
 " Created: 2016-10-17
 "=============================================================================
 
 scriptencoding utf-8
 
-if !exists('g:loaded_xcode')
+if !exists('g:loaded_zxcode')
     finish
 endif
-let g:loaded_xcode = 1
+let g:loaded_zxcode = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! xcode#Open_xcode(...) abort
+function! zxcode#Open_xcode(...) abort
     let a:count = get(a:, 1)
     " file open
     if filereadable(a:count)
