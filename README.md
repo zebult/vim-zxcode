@@ -16,8 +16,10 @@ NeoBundle 'zebult/xcode.vim'
 
 ## mappings
 ```vim
+nnoremap <silent> <Leader>R :ZXcodeRun<CR>
+nnoremap <silent> <Leader>b :ZXcodeBuild<CR>
 nnoremap <silent> <Leader>X :ZXcodeProjectOpen<CR>
 nnoremap <silent> <Leader>x :ZXcodeFileOpen<CR>
-nnoremap <silent> <Leader>e :ZXcodeFocus<CR>
 nnoremap <silent> <Leader>Q :ZXcodeClose<CR>
+nnoremap <silent> <Leader>e :ZXcodeFocus<CR>
 ```

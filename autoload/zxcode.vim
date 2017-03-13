@@ -14,6 +14,16 @@ let g:loaded_zxcode = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+"------------------------
+" setting
+"------------------------
+if !exists("g:xcode_application_name")
+  let g:xcode_application_name = 'Xcode'
+endif
+
+"------------------------
+" function
+"------------------------
 function! zxcode#open_xcode() abort
   cd `git rev-parse --show-toplevel`
   if filereadable(".git/config") == 0
