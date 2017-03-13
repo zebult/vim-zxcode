@@ -6,21 +6,20 @@
 
 scriptencoding utf-8
 
-if exists('g:loaded_vim-zxcode')
+if exists('g:loaded_zxcode')
     finish
 endif
-let g:loaded_vim-zxcode = 1
+let g:loaded_zxcode = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
 
-" open xcode
-command! -nargs=* ZXcodeProjectOpen call zxcode#Open_xcode(<f-args>)
-command! ZXcodeFileOpen execute ":call zxcode#Open_xcode(expand('%:p'))"
-" close xcode
-command! -nargs=0 ZXcodeClose call system("osascript -e 'tell application \"Xcode\" to quit'")
-" focus xcode
-command! -nargs=0 ZXcodeFocus call system("osascript -e 'tell application \"Xcode\" to activate'")
+command! -nargs=* ZXcodeProjectOpen call zxcode#open_xcode(<f-args>)
+command!          ZXcodeFileOpen call zxcode#open_xcode(expand('%:p'))
+command!          ZXcodeRun call system(globpath(&runtimepath, 'autoload/' . 'xcode-build-run' . ''))
+command!          ZXcodeBuild call system(globpath(&runtimepath, 'autoload/' . 'xcode-build' . ''))
+command!          ZXcodeFocus call system("osascript -e 'tell application \"Xcode\" to activate'")
+command!          ZXcodeClose call system("osascript -e 'tell application \"Xcode\" to quit'")
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

@@ -14,7 +14,7 @@ let g:loaded_zxcode = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! zxcode#Open_xcode(...) abort
+function! zxcode#open_xcode(...) abort
     let a:count = get(a:, 1)
     " file open
     if filereadable(a:count)

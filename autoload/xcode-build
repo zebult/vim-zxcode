@@ -1,0 +1,7 @@
+#!/usr/bin/env osascript
+tell application "Xcode" to activate
+tell application "System Events"
+     tell process "Xcode"
+          key code 11 using {command down} # 11: B
+     end tell
+end tell
