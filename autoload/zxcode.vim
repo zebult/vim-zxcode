@@ -32,7 +32,12 @@ function! zxcode#open_xcode() abort
   endif
   let filelist = glob("**/*.xcworkspace")
   let splitted = split(filelist, "\n")
-  call system('open -a Xcode '.expand(splitted))
+  let last_file = ''
+  for x_file in splitted
+    let last_file = x_file
+  endfor
+  echo 'Xcode project open. '.last_file
+  call system('open -a Xcode '.expand(last_file))
 endfunction
 
 let &cpo = s:save_cpo
